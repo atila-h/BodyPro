@@ -1,0 +1,414 @@
+@font-face {
+  src: url('edo_sz.zip') format(zip);
+  font-family: 'my-font';
+}
+body,
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.big-text {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
+  font-size: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu-left li {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+
+.menu-left li.delayed {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 1.8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.icon-header {
+  width: 24px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
+
+}
+
+header:hover .icon-header {
+  filter: brightness(0) invert(0);
+}
+
+.icon-header-two {
+  width: 24px;
+  filter: brightness(0) invert(0);
+}
+
+main {
+  padding-top: 80px;
+}
+
+nav {
+  margin-top: 14px;
+}
+
+li {
+  font-size: 20PX;
+  font-weight: bold;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent;
+  color: white;
+}
+
+header.scrolled,
+header:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: black !important;
+}
+
+header ul li {
+  transition: color 0.3s ease;
+}
+
+header.scrolled ul li,
+header:hover ul li {
+  color: black !important;
+}
+
+/* تمام */
+.col-start {
+  margin-left: 0px;
+}
+
+.col-start {
+  justify-content: start !important;
+  margin-left: 50px;
+}
+
+.col-end {
+  justify-content: end !important;
+  margin-right: 50px;
+}
+
+.openSearch {
+  display: none;
+  overflow: hidden;
+  height: 0;
+
+}
+
+.openSearchShow {
+  display: block;
+}
+
+.logo-gym {
+  width: 70px;
+  height: 70px;
+  margin-left: -20px;
+
+}
+
+.search {
+  position: fixed;
+  top: 88px;
+  right: 70px;
+  background-color: #fff;
+  padding-top: 15px;
+  padding-right: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+
+.logo-shop {
+  width: 35px;
+  height: 35px;
+  margin-top: 17px;
+
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.container-fluid {
+  padding-top: 30px;
+
+}
+
+body {
+  color: white;
+}
+
+.section-one {
+
+  height: 600px;
+  position: relative;
+}
+
+.hero-wrapper {
+  background-image: url("./image/60653-wallpaper-bodybuilding-bodybuilder-muscle-rod.jpg");
+  height: 1000px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+}
+
+.hero-wrapper-two {
+  background-image: url("./image/pxfuel.jpg");
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+
+@media (max-width: 768px) {
+
+  .hero-wrapper,
+  .hero-wrapper-two {
+    height: 60vh;
+    /* کاهش ارتفاع برای صفحه‌های کوچک */
+    background-position: center top;
+    /* بهتر نشون دادن بخش مهم تصویر */
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-wrapper,
+  .hero-wrapper-two {
+    height: 40vh;
+    /* ارتفاع کمتر برای موبایل */
+    background-position: center top;
+  }
+}
+
+.section-four {
+  background-color: #000000;
+  height: 700px;
+  ;
+}
+
+.section-us {
+
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  margin-top: 7%;
+  font-size: 40px;
+  font-weight: bolder;
+
+
+}
+
+
+.section-one {
+  display: flex;
+  align-items: center;
+  /* عمودی وسط */
+  justify-content: flex-start;
+  /* محتوای چپ */
+  height: 1500px;
+  position: relative;
+  padding-left: 180px;
+  /* فاصله از چپ در حالت دسکتاپ */
+}
+
+@media (max-width: 768px) {
+  .section-one {
+    justify-content: center;
+    /* محتوا وسط */
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .big-text {
+    font-size: 36px;
+  }
+
+  .btn-lg {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+.sec-one-div-one {
+  color: white;
+}
+
+.sec-two {
+
+  padding-top: 7px;
+}
+
+@media (max-width: 768px) {
+  .section-one {
+    justify-content: center;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .sec-one-div-one {
+    position: static !important;
+    margin: 0 auto;
+    text-align: center;
+    transform: none !important;
+  }
+
+  .big-text {
+    font-size: 36px;
+  }
+
+  .btn-lg {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+
+/* کدای از اونور امده
+ */
+.product-card img {
+  width: 100%;
+  height: 500px !important;
+  /* ارتفاع ثابت برای همه تصاویر */
+  object-fit: cover;
+  /* برش تصویر برای پر کردن فضا بدون کشیدگی */
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* برای انیمیشن نرم هنگام هاور */
+}
+
+.product-card img:hover {
+  transform: translateY(-10px);
+  /* بالا رفتن عکس هنگام هاور */
+}
+
+.swiper-slide img {
+  width: 100%;
+  display: block;
+
+}
+
+.product-card {
+
+  padding: 10px 5px;
+}
+
+
+
+.product-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 8px 0 4px 0;
+  color: black;
+}
+
+.product-price {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+.product-data {
+  margin-top: 15px;
+  color: gray;
+  font-weight: 700;
+
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  /* فاصله بین li ها */
+  padding: 0;
+}
+
+#menu li {
+  font-size: 50px;
+  padding: 10px 10px;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  /* علامت دست */
+}
+
+#menu li:nth-child(1) {
+  background-color: red;
+}
+
+#menu li:nth-child(2) {
+  background-color: green;
+}
+
+#menu li:nth-child(3) {
+  background-color: purple;
+}
+
+
+.infor {
+  margin-left: 20px;
+}
+
+
+.swiper-wrapper {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .big-text {
+    font-size: 40px;
+  }
+
+  .product-card img {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .big-text {
+    font-size: 28px;
+  }
+
+  .product-card img {
+    height: 250px !important;
+  }
+}
