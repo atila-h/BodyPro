@@ -2,439 +2,307 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Market | E-Commerce Store</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
+    <!-- Navigation (Header) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a style="font-size: 24px;" class="navbar-brand" href="#">
+                <i class=""><img style="width: 60px; height: 60px; " src="logo/logo.gym.white.png" alt=""></i>BODYPOMP
+            </a>
 
-  <div class="hero-wrapper">
-    <header>
-      <nav class="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="row nav-col d-flex align-items-center">
-          <!--لگوی شرکت-->
-          <div class="col-auto pe-3">
-            <span style=" margin-left: 20px; font-family: my-font; font-size: 35px; font-weight: 900;">
-              B O D Y P R
-              <img class="logo-gym  LogoScroll colorLogoScroll" id="logo-default" src="logo/logo.gym.white.png" alt="">
-            </span>
-          </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">hhhhh</a></li>
+                            <li><a class="dropdown-item" href="#">Clothing</a></li>
+                            <li><a class="dropdown-item" href="#">Home Appliances</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">All Categories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
 
-          <!-- منوی وسط -->
-          <div class="col">
-            <ul class="d-flex gap-4 list-unstyled m-0">
-              <li class="nav-item dropdown">
-                <h5 class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">SUPPLEMENTS
-                </h5>
-                <div class="dropdown-menu dropdown-menu-bottom">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit...
+
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link position-relative" href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                            Cart
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                3
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/singup/Sing Up.html">
+                            <i class="fas fa-user"></i>
+                            Account
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--backgraund 
+    Hero Section -->
+    <section class="hero-section">
+        <div class="backgrundPage container text-center">
+            <h1 class="display-4 fw-bold mb-4">Welcome to Market Online Store</h1>
+            <p class="lead mb-5">Best products at the most competitive prices</p>
+            <a href="#" class="btn btn-primary btn-lg px-4 me-2">Shop Now</a>
+            <a href="#" class="btn btn-outline-light btn-lg px-4">Become a Seller</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories mb-5 my-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Popular Categories</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="card text-center">
+                        <div class="ratio ratio-1x1">
+                            <img src="/image/lbas-varzeshi.jpg" class="card-img-top img-fluid" alt="Sportswear"
+                                style="object-fit: cover;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sportswear</h5>
+                            <a href="#" class="btn btn-outline-primary">View</a>
+                        </div>
+                    </div>
                 </div>
-              </li>
-              <li class="nav-item dropdown">
-                <h5 class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">APPAREL</h5>
-                <div class="dropdown-menu dropdown-menu-bottom">
-                  محتوای مربوط به APPAREL
+                <div class="col-md-3 col-6">
+                    <div class="card text-center">
+                        <div class="ratio ratio-1x1">
+                            <img src="/image/mokamel2.jpg" class="card-img-top img-fluid" alt="Sportswear"
+                                style="object-fit: cover;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">supplement</h5>
+                            <a href="pageMokamel.html" class="btn btn-outline-primary">View</a>
+                        </div>
+                    </div>
                 </div>
-              </li>
-              <!-- آیتم‌های دیگر -->
-            </ul>
-          </div>
-          <!-- سمت end -->
-          <div class="col-2">
-            <ul class="d-flex gap-2  list-unstyled col-end gap-4">
-              <li><img src="logo/shop-white.png" alt="" class="logo-shop colorLogoScrollsShop"></li>
-              <li>
+                <div class="col-md-3 col-6">
+                    <div class="card text-center">
+                        <img src="/image/daru.jpg" class="card-img-top" alt="Home Appliances">
+                        <div class="card-body">
+                            <h5 class="card-title">medicine</h5>
+                            <a href="#" class="btn btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card text-center">
+                        <img src="/image/botryAb.jpg" class="card-img-top" alt="Digital Goods">
+                        <div class="card-body">
+                            <h5 class="card-title">Club equipment</h5>
+                            <a href="#" class="btn btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <svg onclick="searching()" class="Search-in" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  width="25px" height="100%" viewBox="0 0 20 20">
-                  <defs>
-                    <clipPath id="s20dhzipga">
-                      <path data-name="Rectangle 2" d="M0 0h20v20H0z"></path>
-                    </clipPath>
-                  </defs>
-                  <path fill="currentColor" data-name="Path 3"
-                    d="m20 18.868-6.489-6.5a7.6 7.6 0 1 0-1.127 1.135L18.869 20zM7.6 13.612a6.005 6.005 0 1 1 6-6 6.008 6.008 0 0 1-6 6"
-                    style="clip-path:url(#s20dhzipga)"></path>
-                </svg>
-                <div class="openSearch">
+    <!-- Featured Products -->
+    <section class="featured-products mb-5 bg-light py-5">
+        <div class="container ">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Best Selling Products</h2>
+                <a href="#" class="btn btn-outline-primary">View All</a>
+            </div>
+            <div class="row g-4">
 
-                  <div class="backgraundSearch">
-                    <input type="search" id="search" class="search" placeholder="Search in..">
-                  </div>
+
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="card product-card h-100">
+                        <img src="" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">Asus Laptop</h5>
+                            <p class="text-muted">ROG Zephyrus</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">$1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="card product-card h-100">
+                        <img src="" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">Asus Laptop</h5>
+                            <p class="text-muted">ROG Zephyrus</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">$1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
-              </li>
-              <li><a href="singup/Sing Up.html"><img id="logo-default" class="logo-gym colortext-center LogoScroll colorLogoScroll"
-                    src="logo/logo.gym.white.png" alt=""></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="card product-card h-100">
+                        <span class="discount-badge">15%</span>
+                        <img src="" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">Wireless Headphones</h5>
+                            <p class="text-muted">Sony WH-1000XM4</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-danger text-decoration-line-through me-2">$350</span>
+                                <span class="fw-bold">$297.50</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
 
-      </nav>
-    </header>
-    <!-- اتمام header -->
-    <main>
-      <!-- سکشن یک -->
-      <section class="section-one ">
-        <div class="sec-one-div-one">
-          <p class="" style="font-size: small;margin-bottom: 0px">GHOST CLEAR WHEY-SHOP NOW</p>
-          <P class="big-text">THE CHOICE <br> IS CLEAR</P>
-          <button type="button" class="btn btn-light btn-lg">SHOP NOW</button>
-        </div>
-      </section>
-  </div>
-  <!-- سیکشن دو  -->
-  <section>
-    <div class="container-fluid sec-two">
-      <div class="row">
-        <div class="col-3 px-1 img-one"><img src="./image/download (2).jpg" alt="" width="100%" height="100%"></div>
-        <div class="col-3 px-1"><img src="./image/010.jpg" alt="" width="100%" height="100%"></div>
-        <div class="col-3 px-1"><img src="./image/Best-Dumbbell-Exercise.jpg" alt="" width="100%" height="100%"></div>
-        <div class="col-3 px-1"><img
-            src="./image/520037551-بدن-انسان-وحشیانه-بدنساز-ورزش-مردانه-پمپ-کردن-عضلات-تمرین-بدن-سازی-مفهوم-پس-زمینه-بدنساز-بدن-عضلانی-مردان-خوش-تیپ-انجام-تمرینات-در-تنه-سالن-بدنسازی.jpg"
-            alt="" width="100%" height="100%"></div>
-      </div>
-    </div>
-  </section>
-  <!-- سیکشن سه  -->
-  <section style="margin-top: 90px;">
-    <h2 style="color: black; font-weight: bold; margin-left: 57px; font-size:39px;">TRANDING SUPPLEMENTS</h2>
-    <div class="swiper" style="margin-top: 40px;width: 96%;">
-      <div class="swiper-wrapper">
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/101/300/200" alt="محصول 1">
-            <div class="infor">
-              <p class="product-name">PRODUCT 1</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">4.002.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="card product-card h-100">
+                        <img src="" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">Apple Smartwatch</h5>
+                            <p class="text-muted">Watch Series 8</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">$499</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+        </div>
+    </section>
 
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/102/300/200" alt="محصول 2">
-            <div class="infor">
-              <p class="product-name">PRODUCT 2</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">3.800.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+    <!-- Special Offers -->
+    <section class="special-offers mb-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Special Offers</h2>
+                <div class="d-flex">
+                    <button class="btn btn-outline-secondary me-2"><i class="fas fa-chevron-left"></i></button>
+                    <button class="btn btn-outline-secondary"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/103/300/200" alt="محصول 3">
-            <div class="infor">
-              <p class="product-name">PRODUCT 3</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">2.900.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-dark text-white">
+                        <img src="" class="card-img" alt="Special Offer">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center bg-dark bg-opacity-50">
+                            <h3 class="card-title">Amazing Discounts</h3>
+                            <p class="card-text">Up to 50% off on selected items</p>
+                            <a href="#" class="btn btn-primary align-self-start">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-dark text-white">
+                        <img src="" class="card-img" alt="Special Offer">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center bg-dark bg-opacity-50">
+                            <h3 class="card-title">Watch Sale</h3>
+                            <p class="card-text">Buy 2 get 1 free</p>
+                            <a href="#" class="btn btn-primary align-self-start">View Products</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/104/300/200" alt="محصول 4">
-            <div class="infor">
-              <p class="product-name">PRODUCT 4</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">5.000.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+    <!-- Simplified Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">About Market</h5>
+                    <p>Online store with the best products at competitive prices.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Shop</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Categories</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main St, New York, NY</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@market.com</li>
+                    </ul>
+                </div>
             </div>
-          </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">© 2023 Market Online Store. All rights reserved.</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="./1707976752.jpg" alt="محصول 5">
-            <div class="infor">
-              <p class="product-name">PRODUCT 5</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">4.700.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/106/300/200" alt="محصول 6">
-            <div class="infor">
-              <p class="product-name">PRODUCT 6</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">2.600.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/107/300/200" alt="محصول 7">
-            <div class="infor">
-              <p class="product-name">PRODUCT 7</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">3.200.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/108/300/200" alt="محصول 8">
-            <div class="infor">
-              <p class="product-name">PRODUCT 8</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">2.800.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/109/300/200" alt="محصول 9">
-            <div class="infor">
-              <p class="product-name">PRODUCT 9</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">2.400.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/110/300/200" alt="محصول 10">
-            <div class="infor">
-              <p class="product-name">PRODUCT 10</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">3.500.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/111/300/200" alt="محصول 11">
-            <div class="infor">
-              <p class="product-name">PRODUCT 11</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">2.900.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/112/300/200" alt="محصول 12">
-            <div class="infor">
-              <p class="product-name">PRODUCT 12</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">3.100.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- دکمه‌های ناوبری -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-
-      <!-- صفحه‌بندی -->
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-
-  <section class="section-three" style="margin-top: 180px;">
-    <div class="hero-wrapper-two">
-      <div class="sec-three-div-one">
-        <p class="" style="font-size: small;margin-bottom: 0px">GHOST CLEAR WHEY-SHOP NOW</p>
-        <P class="big-text">THE CHOICE <br> IS CLEAR</P>
-        <button type="button" class="btn btn-light btn-lg">SHOP NOW</button>
-      </div>
-    </div>
-    <h2 style="font-weight: 700;margin-top: 70px;color: #000000;margin-left: 46px;">TRENDING APPAREL</h2>
-    <div class="swiper" style="margin-top: 40px;width: 96%;">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/101/300/200" alt="محصول 1">
-            <div class="infor">
-              <p class="product-name">PRODUCT 1</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">4.002.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/102/300/200" alt="محصول 2">
-            <div class="infor">
-              <p class="product-name">PRODUCT 2</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">3.800.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/103/300/200" alt="محصول 3">
-            <div class="infor">
-              <p class="product-name">PRODUCT 3</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">2.900.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/104/300/200" alt="محصول 4">
-            <div class="infor">
-              <p class="product-name">PRODUCT 4</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">5.000.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="./1707976752.jpg" alt="محصول 5">
-            <div class="infor">
-              <p class="product-name">PRODUCT 5</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">4.700.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img src="https://picsum.photos/id/106/300/200" alt="محصول 6">
-            <div class="infor">
-              <p class="product-name">PRODUCT 6</p>
-              <p class="product-data">INFO ABOUT PRODUCT</p>
-              <p class="product-price">2.600.000</p>
-              <ul id="menu">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- دکمه‌های ناوبری -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <!-- صفحه‌بندی -->
-      <div class="swiper-pagination"></div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  </section>
-  <div class="section-four">
-    <div class="section-us"> BULDING WITH </div>
-  </div>
-  </main>
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
