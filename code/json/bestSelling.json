@@ -1,0 +1,35 @@
+{
+    
+  "bestSelling" : [
+     {
+      "image": "/shiker/shiker8.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+     {
+      "image": "/Sportswear/Sportswear2.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/Sportswear/Sportswear3.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/Sportswear/Sportswear4.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/Sportswear/Sportswear5.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "supplements": [
+    {
+      "image": "/supplement/carbo.jpg",
+      "name": "carbo",
+      "caption": "bulk",
+      "price": "180$"
+    },
+    {
+      "image": "/supplement/carbo1.jpg",
+      "name": "carbo",
+      "caption": "bulk",
+      "price": "180$"
+    },
+    {
+      "image": "/supplement/creatine1.jpg",
+      "name": "Creatine Monohidrate",
+      "caption": "bulk",
+      "price": "120$"
+    },
+    {
+      "image": "/supplement/creatine2.jpg",
+      "name": "Creatine Monohidrate",
+      "caption": "bulk",
+      "price": "120$"
+    },
+    {
+      "image": "/supplement/creatine3.jpg",
+      "name": "Creatine Monohidrate",
+      "caption": "bulk",
+      "price": "120$"
+    },
+    {
+      "image": "/supplement/gainer.jpg",
+      "name": "Gainer",
+      "caption": "bilk",
+      "price": "133$"
+    },
+    {
+      "image": "/supplement/isoWhey1.jpg",
+      "name": "Gainer",
+      "caption": "bilk",
+      "price": "133$"
+    },
+    {
+      "image": "/supplement/massGiner.jpg",
+      "name": "Gainer",
+      "caption": "bilk",
+      "price": "133$"
+    },
+    {
+      "image": "/supplement/massProtein.jpg",
+      "name": "Gainer",
+      "caption": "bilk",
+      "price": "133$"
+    },
+    {
+      "image": "/supplement/gainer.jpg",
+      "name": "Gainer",
+      "caption": "bilk",
+      "price": "133$"
+    },
+    {
+      "image": "/supplement/isolate.jpg",
+      "name": "isolate",
+      "caption": "bulk",
+      "price": "203$"
+    }
+  ]
+  
+
+}

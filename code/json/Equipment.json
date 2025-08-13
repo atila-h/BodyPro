@@ -1,0 +1,61 @@
+{
+
+ 
+  "Equipment" : [
+    {
+      "image": "/shiker/shiker.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/shiker/shiker1.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/shiker/shiker2.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/shiker/shiker3.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/shiker/shiker4.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/shiker/shiker5.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/shiker/shiker6.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/shiker/shiker7.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/shiker/shiker8.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    }
+  ]
+
+}

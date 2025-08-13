@@ -9,12 +9,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/code/css/style.css">
 
 
 </head>
 
-<body>
+<body class="bg-light">
+    <div class="drawer bg-light d-none">
+        <div class="container h-100">
+            <div class="row ">
+                <div class="d-flex flex-column justify-content-between h-100">
+                    <div class="">
+                        <p style="font-size: 25px; font-weight: 800; text-align:center; margin-top: 50px;" class="">Your
+                            Now shopping</p>
+                        <ul class=" cartMenu">
+
+                        </ul>
+                    </div>
+                    <button style="font-weight: 600;" class=" form-control btn btn-primary">Compute the total
+                        cost</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Navigation (Header) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
@@ -55,29 +74,31 @@
                     </li>
                 </ul>
 
+                <!-- Cart Button -->
 
 
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                     <li class=" nav-item mx-3">
-                        <a data-bs-toggle="dropdown" id="navbarDropdown"
-                            class=" nav-link dropdown-toggle nav-link position-relative" href="#" role="button">
+
+
+
+                    <li onclick="openDrawer()" class=" nav-item">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-shopping-cart"></i>
                             Cart
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                3
-                            </span>
                         </a>
-                        <ul class="cartMenu dropdown-menu">
-                       
-                    </ul>
-                    
                     </li>
-                    
+
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                    <li class=" nav-item mx-3">
+
+
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/singup/Sing Up.html">
+                        <a class="nav-link" href="/code/html/Sing Up.html">
                             <i class="fas fa-user"></i>
                             Account
                         </a>
@@ -112,19 +133,19 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Sportswear</h5>
-                            <a href="#" class="btn btn-outline-primary">View</a>
+                            <a href="/code/html/Sportswear.html" class="btn btn-outline-primary">View</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="card text-center">
                         <div class="ratio ratio-1x1">
-                            <img src="/image/mokamel2.jpg" class="card-img-top img-fluid" alt="Sportswear"
+                            <img src="/image/backgrandeMokamel.jpg" class="card-img-top img-fluid" alt="Sportswear"
                                 style="object-fit: cover;">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">supplement</h5>
-                            <a href="pageMokamel.html" class="btn btn-outline-primary">View</a>
+                            <a href="/code/html/pageMokamel.html" class="btn btn-outline-primary">View</a>
                         </div>
                     </div>
                 </div>
@@ -133,7 +154,7 @@
                         <img src="/image/daru.jpg" class="card-img-top" alt="Home Appliances">
                         <div class="card-body">
                             <h5 class="card-title">medicine</h5>
-                            <a href="#" class="btn btn-outline-primary">View</a>
+                            <a href="/code/html/medicine.html" class="btn btn-outline-primary">View</a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +163,7 @@
                         <img src="/image/botryAb.jpg" class="card-img-top" alt="Digital Goods">
                         <div class="card-body">
                             <h5 class="card-title">Club equipment</h5>
-                            <a href="#" class="btn btn-outline-primary">View</a>
+                            <a href="/code/html/equipment.html" class="btn btn-outline-primary">View</a>
                         </div>
                     </div>
                 </div>
@@ -155,43 +176,58 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2>Best Selling Products</h2>
-                <a href="#" class="btn btn-outline-primary">View All</a>
             </div>
-            <div class="productsList  row g-4">
-
-                <!-- Product 1 -->
-
-                <!-- Product 2 -->
+            <div class="BestSellingProducts row g-4">
 
 
-                <!-- Product 3 -->
+
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="card product-card h-100">
                         <span class="discount-badge">15%</span>
-                        <img src="" class="card-img-top" alt="Product">
+                        <img src="/supplement/gainer.jpg" class="card-img-top" alt="Product">
                         <div class="card-body">
-                            <h5 class="card-title">Wireless Headphones</h5>
-                            <p class="text-muted">Sony WH-1000XM4</p>
+                            <h5 class="card-title">gainer</h5>
+                            <p class="text-muted">bulk</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="text-danger text-decoration-line-through me-2">$350</span>
                                 <span class="fw-bold">$297.50</span>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <button class="btn btn-primary w-100">Add to Cart</button>
+                            <button onclick="DeletCart()" class=" cart  btn btn-primary w-100">Add to Cart</button>
+                            <div class="ezafekardnSabd d-none  d-flex  me-auto ">
+                                <button class="btn  btn-outline-primary">+</button>
+                                <input style="text-align: center;" class="w-100 form-control " type="text">
+                                <button class="btn btn-outline-primary"> - </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product 4 -->
+
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="card product-card h-100">
-                        <img src="" class="card-img-top" alt="Product">
+                        <img src="/shiker/shiker.jpg" class="card-img-top" alt="Product">
                         <div class="card-body">
-                            <h5 class="card-title">Apple Smartwatch</h5>
-                            <p class="text-muted">Watch Series 8</p>
+                            <h5 class="card-title">shiker</h5>
+                            <p class="text-muted"></p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">$499</span>
+                                <span class="fw-bold">$19</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button onclick=" addToCart()" class="btn btn-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="card product-card h-100">
+                        <img src="/medicine/qors1.jpg" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">medicine</h5>
+                            <p class="text-muted"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">$99.9</span>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
@@ -199,7 +235,58 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="card product-card h-100">
+                        <img src="/Sportswear/shoseRunner4.jpg" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">runner</h5>
+                            <p class="text-muted"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">$189</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="card product-card h-100">
+                        <img src="/Sportswear/Sportswear2.jpg" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">set varzeshi</h5>
+                            <p class="text-muted"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">$89</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="card product-card h-100">
+                        <img src="/Sportswear/shoesHoka.jpg" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">set varzeshi</h5>
+                            <p class="text-muted"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">$159</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+
+            <!-- Product 3 -->
+
+        </div>
         </div>
 
         </div>
@@ -210,30 +297,35 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2>Special Offers</h2>
-                <div class="d-flex">
-                    <button class="btn btn-outline-secondary me-2"><i class="fas fa-chevron-left"></i></button>
-                    <button class="btn btn-outline-secondary"><i class="fas fa-chevron-right"></i></button>
-                </div>
+
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="card bg-dark text-white">
-                        <img src="" class="card-img" alt="Special Offer">
-                        <div class="card-img-overlay d-flex flex-column justify-content-center bg-dark bg-opacity-50">
-                            <h3 class="card-title">Amazing Discounts</h3>
-                            <p class="card-text">Up to 50% off on selected items</p>
-                            <a href="#" class="btn btn-primary align-self-start">Shop Now</a>
+                        <div class="card-img overflow-hidden" style="height: auto;"> <!-- ارتفاع ثابت -->
+                            <img src="/image/lbas-varzeshi.jpg" class="card-img" alt="Special Offer">
+                            <div
+                                class="card-img-overlay d-flex flex-column justify-content-center bg-dark bg-opacity-50">
+                                <h3 class="card-title">Amazing Discounts</h3>
+                                <p class="card-text">Up to 50% off on selected items</p>
+                                <a href="#" class="btn btn-primary align-self-start">Shop Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="card bg-dark text-white">
-                        <img src="" class="card-img" alt="Special Offer">
-                        <div class="card-img-overlay d-flex flex-column justify-content-center bg-dark bg-opacity-50">
-                            <h3 class="card-title">Watch Sale</h3>
-                            <p class="card-text">Buy 2 get 1 free</p>
-                            <a href="#" class="btn btn-primary align-self-start">View Products</a>
+                        <div class="card-img-top overflow-hidden" style="height:auto;"> <!-- ارتفاع ثابت -->
+
+                            <img src="/image/520037551-بدن-انسان-وحشیانه-بدنساز-ورزش-مردانه-پمپ-کردن-عضلات-تمرین-بدن-سازی-مفهوم-پس-زمینه-بدنساز-بدن-عضلانی-مردان-خوش-تیپ-انجام-تمرینات-در-تنه-سالن-بدنسازی.jpg"
+                                class="card-img" alt="Special Offer">
+                            <div
+                                class="card-img-overlay d-flex flex-column justify-content-center bg-dark bg-opacity-50">
+                                <h3 class="card-title">Watch Sale</h3>
+                                <p class="card-text">Buy 2 get 1 free</p>
+                                <a href="#" class="btn btn-primary align-self-start">View Products</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -280,7 +372,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/code/javaScript/script.js"></script>
+    <script src="/code/javaScript/supplements.js"></script>
+    <script src="/code/javaScript/Sportswear.js"></script>
+    <script src="/code/javaScript/medicine.js"></script>
+    <script src="/code/javaScript/Equipment.js"></script>
+    <script src="/code/javaScript/bestSelling.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

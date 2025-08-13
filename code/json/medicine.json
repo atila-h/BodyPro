@@ -1,0 +1,36 @@
+{
+
+ "medicine" : [
+    {
+      "image": "/medicine/qors.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/medicine/qors1.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/medicine/qors2.png",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/medicine/qors3.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    },
+    {
+      "image": "/medicine/qors4.jpg",
+      "name": "colombia",
+      "caption": "runnder",
+      "price": "139$"
+    }
+  ]
+
+}
