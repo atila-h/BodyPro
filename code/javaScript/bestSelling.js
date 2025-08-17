@@ -1,18 +1,21 @@
 const bakhshePorFurush = document.querySelector(".BestSellingProducts")
+const cartMenu = document.querySelector('.cartMenu')
+
+
 
 const products = {
     data: []
 }
 
 
-fetch('/code/json/bestSelling.json')
-    .then(Response => Response.json())
+fetch('/code/json/bestSelling.JSON')
+    .then(Response => Response.jSON())
     .then(data => {
         products.data = data
         let furushgah = '';
 
 
-        products.data.bestSelling.forEach((val, index) => {
+        products.data.bestSelling.forEach((val ,index) => {
 
             furushgah += `
             <div class="col-lg-3 col-md-4 col-6">
@@ -28,7 +31,7 @@ fetch('/code/json/bestSelling.json')
             </div>
             </div>
          <div class="card-footer bg-transparent">
-            <button onclick=" addToCart()" class="btn btn-primary w-100">Add to Cart</button>
+            <button onclick=" addToCart(${index})" class="btn btn-primary w-100">Add to Cart</button>
             </div>
             </div>
          </div> `
@@ -40,3 +43,42 @@ fetch('/code/json/bestSelling.json')
 
     });
 
+
+function showCartMenu() {
+    let cartList = ""
+    cart.forEach((val) => {
+        cartList += `
+       <li class="list-group-item">
+                    <img src="${val.image}" width="50" height="50">
+                    <span>${val.name}</span>
+                    <span>${val.price}</span>
+                </li>
+        <hr class="divider"/>
+        `
+    });
+    cartMenu.innerHTML = cartList;
+}
+
+
+let cart = [];
+
+if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"))
+}
+if (cart.length  > 0) {
+    showCartMenu()
+}
+else {
+    cartMenu.innerHTML = '<li class="list-group-item text-center">Cart is Empty</li>'
+}
+
+function addToCart(image, name, price) {
+    const products ={
+        image : image,
+        name : name,
+        price : price
+    }
+    cart.push(products);
+    localStorage.setItem('cart', JSON.stringify(cart))
+    showCartMenu()
+}

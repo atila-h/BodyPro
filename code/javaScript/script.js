@@ -30,34 +30,3 @@ function openDrawer() {
     
 }
 
-
-function showCartMenu() {
-    let cartList = ""
-    cart.forEach((val, index) => {
-        cartList += `
-        <li><a class="item">all</a></li>
-        <hr class="divider"/>
-        `
-    });
-    cartMenu.innerHTML = cartList;
-}
-
-
-const cartMenu = document.querySelector('.cartMenu')
-let cart = [];
-
-if (localStorage.getItem("cart")) {
-    cart = JSON.parse(localStorage.getItem("cart"))
-}
-if (cart.lengh > 0) {
-    showCartMenu()
-}
-else {
-    cartMenu.innerHTML = '<li class="form-control">Cart is Empty</li>'
-}
-
-function addToCart(index) {
-    cart.push(products.data[index]);
-    localStorage.setItem('cart', JSON.stringify(cart))
-    showCartMenu()
-}
