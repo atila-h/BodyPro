@@ -9,7 +9,7 @@ const products = {
 
 
 fetch('/code/json/bestSelling.JSON')
-    .then(Response => Response.jSON())
+    .then(Response => Response.json())
     .then(data => {
         products.data = data
         let furushgah = '';

@@ -23,7 +23,7 @@ fetch('/code/json/supplements.JSON')
               </div>
              <div class="card-body">
               <h5 class="card-title">${val.name}</h5>
-             <p class="text-muted">${val.caption}</p>
+               <p class="text-muted">${val.caption}</p>
              <div class="d-flex justify-content-between align-items-center">
                 <span class="fw-bold">${val.price}</span>
               </div>
@@ -36,18 +36,15 @@ fetch('/code/json/supplements.JSON')
             `
     });
 
-
-
-
     listMokamel.innerHTML = mokamel;
-    
+
   });
 
-  
+
 function showCartMenu() {
-    let cartList = ""
-    cart.forEach((val) => {
-        cartList += `
+  let cartList = ""
+  cart.forEach((val) => {
+    cartList += `
        <li class="list-group-item">
                     <img src="${val.image}" width="50" height="50">
                     <span>${val.name}</span>
@@ -56,27 +53,27 @@ function showCartMenu() {
                 </li>
         <hr class="divider"/>
         `
-    });
-    cartMenu.innerHTML = cartList;
+  });
+  cartMenu.innerHTML = cartList;
 }
 
 
 let cart = [];
 
 if (localStorage.getItem("cart")) {
-    cart = JSON.parse(localStorage.getItem("cart"))
+  cart = JSON.parse(localStorage.getItem("cart"))
 }
-if (cart.length  > 0) {
-    showCartMenu()
+if (cart.length > 0) {
+  showCartMenu()
 }
 else {
-    cartMenu.innerHTML = '<li class="list-group-item text-center">Cart is Empty</li>'
+  cartMenu.innerHTML = '<li class="list-group-item text-center">Cart is Empty</li>'
 }
 
 function addToCart(index) {
-    const product =products.data.supplements[index];
-    
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart))
-    showCartMenu()
+  const product = products.data.supplements[index];
+
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart))
+  showCartMenu()
 }
