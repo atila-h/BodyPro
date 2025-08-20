@@ -119,16 +119,18 @@ footer {
 .swiper-pagination-bullet-active {
   background-color: #e63946;
 }
+
 .product-card img {
-    height: 200px; 
-    object-fit: cover; 
-    width: 100%; 
-}
-.object-fit-cover {
-    object-fit: cover;
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
 }
 
-.drawer{
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.drawer {
   width: 350px;
   top: 87px;
   right: 5px;
@@ -140,8 +142,13 @@ footer {
   border-radius: 1%;
 }
 
-.button-cost2{
+.button-cost2 {
   bottom: 0;
   margin-top: 60vh;
+}
+
+.cartMenu {
+  overflow-y: auto;
+  height: 70vh;
 }
 

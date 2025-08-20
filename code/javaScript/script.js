@@ -1,32 +1,23 @@
-/*function DeletCart(index) {
-    const Cartbutton = document.querySelector('.cart')
-    const sabd = document.querySelector('.ezafekardnSabd')
+const cartMenu = document.querySelector('.cartMenu')
 
-    if (Cartbutton && sabd) {
-
-        Cartbutton.style.display = "none"
-        sabd.classList.remove('d-none')
-        sabd.style.display = "block"
-    }
-
-
+const products = {
+    data: []
 }
-*/
-
 const drawer = document.querySelector('.drawer')
-let drawerStat;
+let drawerStat=1;
 function openDrawer() {
 
     if (drawerStat) {
         drawer.classList.remove('d-none')
-        drawer.style.display = "block"
         drawerStat = 0;
     }
     else {
-        drawer.style.display = "none"
+        drawer.classList.add('d-none')
         drawerStat = 1;
     }
     
     
 }
+
+let cart = [];
 
