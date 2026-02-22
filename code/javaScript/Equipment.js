@@ -3,19 +3,24 @@ const clubEquipment = document.querySelector(".equipment")
 
 
 
- fetch('/code/json/equipment.JSON')
+ fetch('../json/equipment.JSON')
     .then(Response => Response.json())
     .then(data => {
-        products.data = data
+        window.products = { data };
+
+        // Determine if we're on a subpage and adjust image path
+        const isSubPage = window.location.pathname.includes('/code/html/');
+        const imagePathPrefix = isSubPage ? '../../' : '';
+
         let pageEquipment = '';
 
-        products.data.equipment.forEach((val, index) => {
+        data.equipment.forEach((val, index) => {
 
             pageEquipment += `
               <div class="col-lg-3 col-md-4 col-6">
                <div class="card product-card h-100">
-             <div class="card-img-top overflow-hidden" style="height: 200px;"> <!-- ارتفاع ثابت -->
-             <img src="${val.image}" class="w-100 h-100 object-fit-cover" alt="Product">
+             <div class="card-img-top overflow-hidden" style="height: 200px;">
+             <img src="${imagePathPrefix}${val.image}" class="w-100 h-100 object-fit-cover" alt="Product">
               </div>
              <div class="card-body">
               <h5 class="card-title">${val.name}</h5>
@@ -24,8 +29,8 @@ const clubEquipment = document.querySelector(".equipment")
                 <span class="fw-bold">${val.price}</span>
               </div>
              </div>
-              <div class="card-footer bg-transparent">
-            <button onclick=" addToCart(${index})" class="btn btn-primary w-100">Add to Cart</button>
+          <div class="card-footer bg-transparent">
+            <button onclick="addToCartByIndex('equipment', ${index})" class="btn btn-primary w-100">Add to Cart</button>
           </div>
           </div>
            </div>
@@ -39,11 +44,15 @@ const clubEquipment = document.querySelector(".equipment")
 
   
 function showCartMenu() {
+  // Determine if we're on a subpage and adjust image path
+  const isSubPage = window.location.pathname.includes('/code/html/');
+  const imagePathPrefix = isSubPage ? '../../' : '';
+
   let cartList = '';
   cart.forEach((val, index) => {
     cartList += ` <li class="list-group-item d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-                <img src="${val.image}" width="50" height="50" alt="${val.name}" class="me-2">
+                <img src="${imagePathPrefix}${val.image}" width="50" height="50" alt="${val.name}" class="me-2">
                 <div>
                     <span>${val.name}</span><br>
                     <span class="text-muted">${val.caption}</span><br>

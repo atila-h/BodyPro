@@ -1,386 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Market | BODYPOMP </title>
-    <!-- Bootstrap 5 -->
+    <title>BODYPOMP - Online Sports Store</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <link rel="stylesheet" href="code/css/style.css">
+    <link rel="stylesheet" href="code/css/enhancements.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/code/css/style.css">
-
-
 </head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="logo/logo.gym.white.png" class="logo-white" alt="BODYPOMP Logo" height="40">
+          <img src="logo/logo.gym.black.png" class="logo-black" alt="BODYPOMP Logo" height="40">
+          <span class="brand-text">BODYPOMP</span>
+        </a>
+        
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Center Navigation Links -->
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          </ul>
+          
+          <!-- Right Actions -->
+          <div class="nav-actions">
+            <!-- Cart Button -->
+            <button class="nav-btn" id="cartBtn" aria-label="Shopping Cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge" id="cartCount">0</span>
+            </button>
+            
+            <!-- Wishlist Button -->
+            <button class="nav-btn" id="wishlistBtn" data-bs-toggle="modal" data-bs-target="#likesModal" aria-label="Wishlist">
+              <i class="fas fa-heart"></i>
+              <span class="badge" id="likesCount">0</span>
+            </button>
+            
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-<body class="bg-light">
-    <div class="drawer bg-light d-none">
-        <div class="container h-100">
-            <div class="row ">
-                <div class="d-flex flex-column justify-content-between h-100">
-                    <div class="drawer">
-                        <p style="font-size: 25px; font-weight: 800; text-align:center; margin-top: 50px;" class="">Your
-                            Now shopping</p>
-                        <ul class="cartMenu list-group">
 
-                        </ul>
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">Get Fit, Stay Strong</h1>
+            <p class="lead mb-4 fs-4">Explore curated collections made for your goals</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#products" class="btn btn-danger btn-lg px-4">Shop Now</a>
+                <a href="#categories" class="btn btn-outline-light btn-lg px-4">Discover Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Explore Our Fitness Collections</h2>
+            
+            <!-- Category 1: Gym Pills -->
+            <a href="#products" class="category-card-full" onclick="filterByCategory('Medicine')">
+                <div class="category-card-content">
+                    <h3>Gym Pills</h3>
+                    <p>Essential vitamins, minerals, and health supplements to support your fitness journey. From multivitamins to pre-workout formulas, boost your performance and recovery.</p>
+                    <span class="btn btn-danger"><i class="fas fa-arrow-left ms-2"></i> Shop Now</span>
+                </div>
+                <div class="category-card-image">
+                    <img src="image/daru.jpg" alt="Gym Pills">
+                </div>
+            </a>
+            
+            <!-- Category 2: Gym Supplements -->
+            <a href="#products" class="category-card-full" onclick="filterByCategory('Supplements')">
+                <div class="category-card-content">
+                    <h3>Gym Supplements</h3>
+                    <p>Premium protein powders, mass gainers, creatine, and amino acids. Fuel your muscles with high-quality supplements designed for maximum gains and optimal performance.</p>
+                    <span class="btn btn-danger"><i class="fas fa-arrow-left ms-2"></i> Shop Now</span>
+                </div>
+                <div class="category-card-image">
+                    <img src="image/backgrandeMokamel.jpg" alt="Gym Supplements">
+                </div>
+            </a>
+            
+            <!-- Category 3: Shakers and Bottles -->
+            <a href="#products" class="category-card-full" onclick="filterByCategory('Equipment')">
+                <div class="category-card-content">
+                    <h3>Shakers and Bottles</h3>
+                    <p>High-quality gym equipment including shakers, water bottles, resistance bands, and workout accessories. Everything you need for a complete workout experience.</p>
+                    <span class="btn btn-danger"><i class="fas fa-arrow-left ms-2"></i> Shop Now</span>
+                </div>
+                <div class="category-card-image">
+                    <img src="image/botryAb.jpg" alt="Shakers and Bottles">
+                </div>
+            </a>
+            
+            <!-- Category 4: Sportswear -->
+            <a href="#products" class="category-card-full" onclick="filterByCategory('Sportswear')">
+                <div class="category-card-content">
+                    <h3>Sportswear</h3>
+                    <p>Professional athletic wear designed for performance and comfort. From running shoes to training gear, find the perfect outfit for any workout or sport.</p>
+                    <span class="btn btn-danger"><i class="fas fa-arrow-left ms-2"></i> Shop Now</span>
+                </div>
+                <div class="category-card-image">
+                    <img src="image/lbas-varzeshi.jpg" alt="Sportswear">
+                </div>
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Featured Products</h2>
+            
+            <!-- Filter Toggle Button for Mobile -->
+            <button class="filter-toggle-btn" onclick="document.querySelector('.product-filters').classList.add('active'); document.querySelector('.filter-overlay').classList.add('active');">
+                <i class="fas fa-filter"></i> Filters
+            </button>
+            
+            <!-- Search & Sort -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search products...">
                     </div>
-                    <button style="font-weight: 600;" class=" form-control btn btn-primary">Compute the total
-                        cost</button>
+                </div>
+                <div class="col-md-6">
+                    <div class="sort-dropdown-container justify-content-md-end">
+                        <label><i class="fas fa-sort me-2"></i>Sort by:</label>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="default">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="name">Name: A-Z</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Active Filters -->
+            <div class="active-filters" id="activeFilters"></div>
+            
+            <!-- Results Count -->
+            <div class="results-count" id="resultsCount"></div>
+            
+            <div class="row">
+                <!-- Filter Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <div class="product-filters" id="filterSidebar">
+                        <button class="btn-close d-lg-none position-absolute end-0 m-3" onclick="document.querySelector('.product-filters').classList.remove('active'); document.querySelector('.filter-overlay').classList.remove('active');"></button>
+                        <h5 class="mb-4"><i class="fas fa-filter me-2"></i>Filter Products</h5>
+                        <!-- Filters will be rendered here -->
+                    </div>
+                    <div class="filter-overlay" onclick="document.querySelector('.product-filters').classList.remove('active'); this.classList.remove('active');"></div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="col-lg-9">
+                    <div class="row g-4" id="productsContainer" data-category="">
+                        <!-- Products loaded via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Special Offers -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Special Offers</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <a href="#products" class="special-offer-link" onclick="filterByCategory('Sportswear')">
+                        <div class="special-offer">
+                            <img src="image/lbas-varzeshi.jpg" alt="Offer">
+                            <div class="special-offer-overlay"></div>
+                            <div class="content">
+                                <h3>Up to 50% Off</h3>
+                                <p>On selected sportswear items</p>
+                                <span class="btn btn-danger mt-3">Shop Now</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#products" class="special-offer-link" onclick="filterByCategory('Supplements')">
+                        <div class="special-offer">
+                            <img src="image/backgrandeMokamel.jpg" alt="Offer">
+                            <div class="special-offer-overlay"></div>
+                            <div class="content">
+                                <h3>Buy 2 Get 1 Free</h3>
+                                <p>On supplements</p>
+                                <span class="btn btn-danger mt-3">Shop Now</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buying Guide Section -->
+    <section class="buying-guide py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Buying Guide</h2>
+            <div class="row g-4">
+                <!-- Supplement Guide -->
+                <div class="col-md-6">
+                    <div class="guide-card">
+                        <div class="guide-header">
+                            <i class="fas fa-pills"></i>
+                            <h4>What Supplement is Right for My Goal?</h4>
+                        </div>
+                        <div class="guide-content">
+                            <div class="goal-item">
+                                <h5><i class="fas fa-fire"></i> Fat Loss</h5>
+                                <p>Look for thermogenics, L-Carnitine, and fat burners. These help boost metabolism and energy during workouts.</p>
+                                <a href="#products" class="btn btn-sm" onclick="filterByCategory('Supplements')">Browse Supplements</a>
+                            </div>
+                            <div class="goal-item">
+                                <h5><i class="fas fa-dumbbell"></i> Muscle Building (Bulk)</h5>
+                                <p>Mass gainers, whey protein, and creatine are essential. Focus on high-protein formulas with carbs for calorie surplus.</p>
+                                <a href="#products" class="btn btn-sm" onclick="filterByCategory('Supplements')">Browse Supplements</a>
+                            </div>
+                            <div class="goal-item">
+                                <h5><i class="fas fa-bolt"></i> Strength</h5>
+                                <p>Creatine monohydrate is the gold standard. Pair with protein and pre-workout for maximum performance.</p>
+                                <a href="#products" class="btn btn-sm" onclick="filterByCategory('Supplements')">Browse Supplements</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sportswear Size Guide -->
+                <div class="col-md-6">
+                    <div class="guide-card">
+                        <div class="guide-header">
+                            <i class="fas fa-tshirt"></i>
+                            <h4>Guide to Choosing Sportswear Size</h4>
+                        </div>
+                        <div class="guide-content">
+                            <div class="size-chart">
+                                <h5><i class="fas fa-ruler"></i> Size Chart</h5>
+                                <table class="table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th>Size</th>
+                                            <th>Chest (in)</th>
+                                            <th>Waist (in)</th>
+                                            <th>Hip (in)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>S</td>
+                                            <td>34-36</td>
+                                            <td>28-30</td>
+                                            <td>34-36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>M</td>
+                                            <td>38-40</td>
+                                            <td>32-34</td>
+                                            <td>38-40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>L</td>
+                                            <td>42-44</td>
+                                            <td>36-38</td>
+                                            <td>42-44</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XL</td>
+                                            <td>46-48</td>
+                                            <td>40-42</td>
+                                            <td>46-48</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tips">
+                                <h5><i class="fas fa-lightbulb"></i> Tips for Perfect Fit</h5>
+                                <ul>
+                                    <li>Measure yourself before ordering</li>
+                                    <li>Check the size guide for each product</li>
+                                    <li>Consider if you prefer loose or tight fit</li>
+                                    <li>Read reviews for sizing feedback</li>
+                                </ul>
+                            </div>
+                            <a href="#products" class="btn btn-sm mt-3" onclick="filterByCategory('Sportswear')">Browse Sportswear</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>About BODYPOMP</h5>
+                    <p>Your trusted online store for fitness products, supplements, sportswear, and gym equipment.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#products">Shop</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="code/html/product-detail.html">Product Detail</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Fitness Street</li>
+                        <li><i class="fas fa-phone me-2"></i>(123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@bodypomp.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2026 BODYPOMP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5 class="mb-0">Shopping Cart</h5>
+            <button class="btn-close btn-close-white" id="closeCart"></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <p class="text-center text-muted py-5">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="d-flex justify-content-between mb-3">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <button class="btn btn-danger w-100" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Likes Modal -->
+    <div class="modal fade" id="likesModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your Favorites</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="likesItems">
+                    <p class="text-center text-muted">No favorites yet</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Navigation (Header) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            <a style="font-size: 24px;" class="navbar-brand" href="#">
-                <i class=""><img style="width: 60px; height: 60px; " src="/logo/logo.gym.white.png" alt=""></i>BODYPOMP
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown">
-                            Categories
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html">Home</a></li>
-                            <li><a class="dropdown-item" href="/code/html/pageMokamel.html">Shop</a></li>
-                            <li><a class="dropdown-item" href="#">Categories</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">All Categories</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-
-                <!-- Cart Button -->
-
-
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                    <li class=" nav-item mx-3">
-
-
-
-                    <li onclick="openDrawer()" class=" nav-item">
-                        <span class="nav-link">
-                            <i class="fas fa-shopping-cart"></i>
-                            Cart <span class="bagAdd"></span>
-                        </span>
-                    </li>
-
-                </ul>
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                    <li class=" nav-item mx-3">
-
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/code/html/singup/Sing Up.html">
-                            <i class="fas fa-user"></i>
-                            Account
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!--backgraund 
-    Hero Section -->
-    <section class="hero-section">
-        <div class="backgrundPage container text-center">
-            <h1 class="display-4 fw-bold mb-4">Welcome to Market Online Store</h1>
-            <p class="lead mb-5">Best products at the most competitive prices</p>
-            <a href="#" class="btn btn-primary btn-lg px-4 me-2">Shop Now</a>
-            <a href="#" class="btn btn-outline-light btn-lg px-4">Become a Seller</a>
-        </div>
-    </section>
-
-    <!-- Categories -->
-    <section class="categories mb-5 my-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Popular Categories</h2>
-            <div class="row g-4">
-                <div class="col-md-3 col-6">
-                    <div class="card text-center">
-                        <div class="ratio ratio-1x1">
-                            <img src="/image/lbas-varzeshi.jpg" class="card-img-top img-fluid" alt="Sportswear"
-                                style="object-fit: cover;">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Sportswear</h5>
-                            <a href="/code/html/Sportswear.html" class="btn btn-outline-primary">View</a>
-                        </div>
-                    </div>
+    <!-- Reviews Modal -->
+    <div class="modal fade" id="reviewsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Product Reviews</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="card text-center">
-                        <div class="ratio ratio-1x1">
-                            <img src="/image/backgrandeMokamel.jpg" class="card-img-top img-fluid" alt="Sportswear"
-                                style="object-fit: cover;">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">supplement</h5>
-                            <a href="/code/html/pageMokamel.html" class="btn btn-outline-primary">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="card text-center">
-                        <img src="/image/botryAb.jpg" class="card-img-top" alt="Digital Goods">
-                        <div class="card-body">
-                            <h5 class="card-title">Club equipment</h5>
-                            <a href="/code/html/equipment.html" class="btn btn-outline-primary">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="card text-center">
-                        <img src="/image/daru.jpg" class="card-img-top" alt="Home Appliances">
-                        <div class="card-body">
-                            <h5 class="card-title">medicine</h5>
-                            <a href="/code/html/medicine.html" class="btn btn-outline-primary">View</a>
-                        </div>
-                    </div>
+                <div class="modal-body" id="reviewsModalBody">
+                    <!-- Reviews loaded via JS -->
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Featured Products -->
-    <section class=" mb-5 bg-light py-5">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2>Best Selling Products</h2>
-            </div>
-            <div class=" row g-4">
-                <div class="BestSelling"></div>
-
-
-                <!--   <div class="col-lg-3 col-md-4 col-6">
-                    <div class="card product-card h-100">
-                        <span class="discount-badge">15%</span>
-                        <img src="/supplement/gainer.jpg" class="card-img-top" alt="Product">
-                        <div class="card-body">
-                            <h5 class="card-title">gainer</h5>
-                            <p class="text-muted">bulk</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-danger text-decoration-line-through me-2">$350</span>
-                                <span class="fw-bold">$297.50</span>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <button onclick="DeletCart()" class=" cart  btn btn-primary w-100">Add to Cart</button>
-                            <div class="ezafekardnSabd d-none  d-flex  me-auto ">
-                                <button class="btn  btn-outline-primary">+</button>
-                                <input style="text-align: center;" class="w-100 form-control " type="text">
-                                <button class="btn btn-outline-primary"> - </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="card product-card h-100">
-                        <img src="/shiker/shiker.jpg" class="card-img-top" alt="Product">
-                        <div class="card-body">
-                            <h5 class="card-title">shiker</h5>
-                            <p class="text-muted"></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">$19</span>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <button onclick=" addToCart()" class="btn btn-primary w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="card product-card h-100">
-                        <img src="/medicine/qors1.jpg" class="card-img-top" alt="Product">
-                        <div class="card-body">
-                            <h5 class="card-title">medicine</h5>
-                            <p class="text-muted"></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">$99.9</span>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <button class="btn btn-primary w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="card product-card h-100">
-                        <img src="/Sportswear/shoseRunner4.jpg" class="card-img-top" alt="Product">
-                        <div class="card-body">
-                            <h5 class="card-title">runner</h5>
-                            <p class="text-muted"></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">$189</span>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <button class="btn btn-primary w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="card product-card h-100">
-                        <img src="/Sportswear/Sportswear2.jpg" class="card-img-top" alt="Product">
-                        <div class="card-body">
-                            <h5 class="card-title">set varzeshi</h5>
-                            <p class="text-muted"></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">$89</span>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <button class="btn btn-primary w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="card product-card h-100">
-                        <img src="/Sportswear/shoesHoka.jpg" class="card-img-top" alt="Product">
-                        <div class="card-body">
-                            <h5 class="card-title">set varzeshi</h5>
-                            <p class="text-muted"></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">$159</span>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <button class="btn btn-primary w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            -->
-
-
-                <!-- Product 3 -->
-
-            </div>
-        </div>
-
-        </div>
-    </section>
-
-    <!-- Special Offers -->
-    <section class="special-offers mb-5">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2>Special Offers</h2>
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card bg-dark text-white">
-                        <div class="card-img overflow-hidden" style="height: auto;"> <!-- ارتفاع ثابت -->
-                            <img src="/image/lbas-varzeshi.jpg" class="card-img" alt="Special Offer">
-                            <div
-                                class="card-img-overlay d-flex flex-column justify-content-center bg-dark bg-opacity-50">
-                                <h3 class="card-title">Amazing Discounts</h3>
-                                <p class="card-text">Up to 50% off on selected items</p>
-                                <a href="#" class="btn btn-primary align-self-start">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card bg-dark text-white">
-                        <div class="card-img-top overflow-hidden" style="height:auto;"> <!-- ارتفاع ثابت -->
-
-                            <img src="/image/520037551-بدن-انسان-وحشیانه-بدنساز-ورزش-مردانه-پمپ-کردن-عضلات-تمرین-بدن-سازی-مفهوم-پس-زمینه-بدنساز-بدن-عضلانی-مردان-خوش-تیپ-انجام-تمرینات-در-تنه-سالن-بدنسازی.jpg"
-                                class="card-img" alt="Special Offer">
-                            <div
-                                class="card-img-overlay d-flex flex-column justify-content-center bg-dark bg-opacity-50">
-                                <h3 class="card-title">Watch Sale</h3>
-                                <p class="card-text">Buy 2 get 1 free</p>
-                                <a href="#" class="btn btn-primary align-self-start">View Products</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Simplified Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">About Market</h5>
-                    <p>Online store with the best products at competitive prices.</p>
-                    <div class="social-icons">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white">Home</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Shop</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Categories</a></li>
-                        <li><a href="#" class="text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main St, New York, NY</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
-                        <li><i class="fas fa-envelope me-2"></i> info@market.com</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4 bg-light">
-            <div class="text-center">
-                <p class="mb-0">© 2023 Market Online Store. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/code/javaScript/script.js"></script>
-    <script src="/code/javaScript/supplements.js"></script>
-    <script src="/code/javaScript/Sportswear.js"></script>
-    <script src="/code/javaScript/medicine.js"></script>
-    <script src="/code/javaScript/Equipment.js"></script>
-    <script src="/code/javaScript/bestSelling.js"></script>
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="code/javaScript/main.js"></script>
+    <script src="code/javaScript/enhancements.js"></script>
 </body>
-
 </html>

@@ -1,90 +1,88 @@
 {
-
-"Sportswear": [
+  "Sportswear": [
     {
-      "image": "/Sportswear/shoesHoka.jpg",
+      "image": "Sportswear/shoesHoka.jpg",
       "name": "shoesHoka",
       "caption": "runner",
       "price": "38$"
     },
     {
-      "image": "/Sportswear/shoesHoka1.jpg",
+      "image": "Sportswear/shoesHoka1.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "98$"
     },
     {
-      "image": "/Sportswear/shoseRunner.jpg",
+      "image": "Sportswear/shoseRunner.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "99$"
     },
     {
-      "image": "/Sportswear/Sportswear2.jpg",
+      "image": "Sportswear/Sportswear2.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "149$"
     },
     {
-      "image": "/Sportswear/Sportswear3.jpg",
+      "image": "Sportswear/Sportswear3.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "159$"
     },
     {
-      "image": "/Sportswear/Sportswear4.jpg",
+      "image": "Sportswear/Sportswear4.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "138$"
     },
     {
-      "image": "/Sportswear/Sportswear5.jpg",
+      "image": "Sportswear/Sportswear5.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "137$"
     },
     {
-      "image": "/Sportswear/Sportswear1.jpg",
+      "image": "Sportswear/Sportswear1.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "136$"
     },
     {
-      "image": "/Sportswear/Sportswear2.jpg",
+      "image": "Sportswear/Sportswear2.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "135$"
     },
     {
-      "image": "/Sportswear/Sportswear3.jpg",
+      "image": "Sportswear/Sportswear3.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "134$"
     },
     {
-      "image": "/Sportswear/Sportswear4.jpg",
+      "image": "Sportswear/Sportswear4.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "133$"
     },
     {
-      "image": "/Sportswear/Sportswear5.jpg",
+      "image": "Sportswear/Sportswear5.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "132$"
     },
     {
-      "image": "/Sportswear/Sportswear6.jpg",
+      "image": "Sportswear/Sportswear6.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "131$"
     },
     {
-      "image": "/Sportswear/Sportswear7.jpg",
+      "image": "Sportswear/Sportswear7.jpg",
       "name": "colombia",
       "caption": "runnder",
       "price": "130$"
     }
   ]
-
 }

@@ -1,0 +1,274 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Whey Protein Isolate",
+            "category": "Supplements",
+            "price": "$49.99",
+            "oldPrice": "$59.99",
+            "discount": 17,
+            "image": "supplement/isolate.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.8,
+            "reviews": [
+                {"user": "John D.", "rating": 5, "comment": "Best protein I've ever used! Great taste and mixability."},
+                {"user": "Mike R.", "rating": 4, "comment": "Good quality, dissolves well."}
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Mass Gainer",
+            "category": "Supplements",
+            "price": "$39.99",
+            "oldPrice": "$49.99",
+            "discount": 20,
+            "image": "supplement/massGiner.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.5,
+            "reviews": [
+                {"user": "Alex T.", "rating": 5, "comment": "Helped me gain 5lbs in a month!"}
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Creatine Monohydrate",
+            "category": "Supplements",
+            "price": "$24.99",
+            "image": "supplement/creatine1.jpg",
+            "inStock": false,
+            "restockDate": "2026-02-20",
+            "rating": 4.9,
+            "reviews": [
+                {"user": "Sam K.", "rating": 5, "comment": "Pure and effective. Been using for years."},
+                {"user": "Chris P.", "rating": 5, "comment": "Best creatine on the market."}
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Carbo Powder",
+            "category": "Supplements",
+            "price": "$29.99",
+            "image": "supplement/carbo.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.2,
+            "reviews": [
+                {"user": "Tom H.", "rating": 4, "comment": "Good energy booster before workouts."}
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Pro Whey",
+            "category": "Supplements",
+            "price": "$44.99",
+            "oldPrice": "$54.99",
+            "discount": 18,
+            "image": "supplement/proWhey.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.6,
+            "reviews": [
+                {"user": "Dan M.", "rating": 5, "comment": "Amazing flavors!"}
+            ]
+        },
+        {
+            "id": 6,
+            "name": "ISO Whey",
+            "category": "Supplements",
+            "price": "$39.99",
+            "image": "supplement/isoWhey1.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.4,
+            "reviews": []
+        },
+        {
+            "id": 7,
+            "name": "Sportswear Set",
+            "category": "Sportswear",
+            "price": "$89.99",
+            "oldPrice": "$109.99",
+            "discount": 18,
+            "image": "Sportswear/Sportswear2.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.7,
+            "reviews": [
+                {"user": "FitGuy22", "rating": 5, "comment": "Very comfortable for workouts."},
+                {"user": "GymRat", "rating": 4, "comment": "Great material, runs small though."}
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Running Shoes",
+            "category": "Sportswear",
+            "price": "$129.99",
+            "image": "Sportswear/shoseRunner4.jpg",
+            "inStock": false,
+            "restockDate": "2026-02-25",
+            "rating": 4.9,
+            "reviews": [
+                {"user": "RunnerPro", "rating": 5, "comment": "Best running shoes I've owned!"}
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Hoka Shoes",
+            "category": "Sportswear",
+            "price": "$159.99",
+            "oldPrice": "$189.99",
+            "discount": 16,
+            "image": "Sportswear/shoesHoka.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.8,
+            "reviews": [
+                {"user": "MarathonMike", "rating": 5, "comment": "Super comfortable for long runs."}
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Training Shorts",
+            "category": "Sportswear",
+            "price": "$34.99",
+            "image": "Sportswear/Sportswear1.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.3,
+            "reviews": []
+        },
+        {
+            "id": 11,
+            "name": "Gym Bag",
+            "category": "Sportswear",
+            "price": "$49.99",
+            "image": "Sportswear/Sportswear3.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.5,
+            "reviews": [
+                {"user": "BagBoss", "rating": 5, "comment": "Very durable and spacious!"}
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Resistance Bands",
+            "category": "Equipment",
+            "price": "$19.99",
+            "image": "shiker/shiker1.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.6,
+            "reviews": [
+                {"user": "HomeGym", "rating": 5, "comment": "Perfect for home workouts."}
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Adjustable Dumbbells",
+            "category": "Equipment",
+            "price": "$199.99",
+            "oldPrice": "$249.99",
+            "discount": 20,
+            "image": "shiker/shiker3.jpg",
+            "inStock": false,
+            "restockDate": "2026-03-01",
+            "rating": 4.9,
+            "reviews": [
+                {"user": "IronMike", "rating": 5, "comment": "Worth every penny!"},
+                {"user": "GymDad", "rating": 5, "comment": "Space saver and versatile."}
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Exercise Mat",
+            "category": "Equipment",
+            "price": "$29.99",
+            "image": "shiker/shiker5.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.4,
+            "reviews": [
+                {"user": "YogaFan", "rating": 4, "comment": "Good thickness and grip."}
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Weight Plates",
+            "category": "Equipment",
+            "price": "$89.99",
+            "image": "shiker/shiker7.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.7,
+            "reviews": []
+        },
+        {
+            "id": 16,
+            "name": "Pre-Workout",
+            "category": "Medicine",
+            "price": "$34.99",
+            "image": "medicine/qors1.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.5,
+            "reviews": [
+                {"user": "EnergyBoost", "rating": 5, "comment": "Gives me energy for intense sessions!"}
+            ]
+        },
+        {
+            "id": 17,
+            "name": "BCAA",
+            "category": "Medicine",
+            "price": "$29.99",
+            "oldPrice": "$39.99",
+            "discount": 25,
+            "image": "medicine/qors2.png",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.3,
+            "reviews": []
+        },
+        {
+            "id": 18,
+            "name": "Multivitamins",
+            "category": "Medicine",
+            "price": "$24.99",
+            "image": "medicine/qors3.jpg",
+            "inStock": false,
+            "restockDate": "2026-02-18",
+            "rating": 4.6,
+            "reviews": [
+                {"user": "HealthFirst", "rating": 5, "comment": "Feeling more energetic since I started taking these."}
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Fish Oil",
+            "category": "Medicine",
+            "price": "$19.99",
+            "image": "medicine/qors4.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.4,
+            "reviews": [
+                {"user": "HeartHealthy", "rating": 4, "comment": "Good quality fish oil."}
+            ]
+        },
+        {
+            "id": 20,
+            "name": "ZMA Supplement",
+            "category": "Medicine",
+            "price": "$22.99",
+            "image": "medicine/qors.jpg",
+            "inStock": true,
+            "restockDate": null,
+            "rating": 4.7,
+            "reviews": [
+                {"user": "SleepWell", "rating": 5, "comment": "Best sleep supplement I've tried!"}
+            ]
+        }
+    ]
+}
