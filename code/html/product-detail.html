@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - BodyPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../code/css/style.css">
+    <link rel="stylesheet" href="../../code/css/enhancements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../index.html">
+          <span class="brand-text">BODYPRO</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../index.html#categories">Categories</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../index.html#guide">Guide</a></li>
+          </ul>
+          <div class="nav-actions">
+            <button class="nav-btn" id="cartBtn" aria-label="Shopping Cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge" id="cartCount">0</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div style="padding-top:100px;background:var(--dark-surface);">
+        <div class="container">
+            <nav aria-label="breadcrumb" style="padding:16px 0;">
+                <ol class="breadcrumb mb-0" style="font-size:0.85rem;">
+                    <li class="breadcrumb-item"><a href="../../index.html" style="color:var(--primary);">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../shop.html" style="color:var(--primary);">Shop</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" id="breadcrumbCategory">Product</li>
+                    <li class="breadcrumb-item active" aria-current="page" id="breadcrumbName">Detail</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5" id="productDetail">
+                <div class="col-lg-6">
+                    <div class="skeleton" style="height:500px;border-radius:var(--radius-md);" id="productImageSkeleton"></div>
+                    <div id="productImageContainer" style="display:none;"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skeleton skeleton-text" style="width:40%;height:16px;margin-bottom:12px;" id="detailSkeleton1"></div>
+                    <div class="skeleton skeleton-text" style="width:80%;height:28px;margin-bottom:12px;" id="detailSkeleton2"></div>
+                    <div class="skeleton skeleton-text" style="width:30%;height:16px;margin-bottom:20px;" id="detailSkeleton3"></div>
+                    <div id="productDetailInfo" style="display:none;"></div>
+                </div>
+            </div>
+
+            <!-- Features & Description -->
+            <div class="row mt-5 pt-4" id="productFeatures" style="display:none;">
+                <div class="col-lg-8">
+                    <h4 class="fw-bold mb-4">Product Details</h4>
+                    <div id="detailDescription"></div>
+                    <div id="detailFeatures"></div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="guide-card" style="margin-bottom:20px;">
+                        <div class="guide-header" style="background:linear-gradient(135deg,var(--success),#157347);">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Guarantee</h4>
+                        </div>
+                        <div class="guide-content">
+                            <ul style="list-style:none;padding:0;">
+                                <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;"><i class="fas fa-check me-2" style="color:var(--success);"></i>30-Day Money Back</li>
+                                <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;"><i class="fas fa-check me-2" style="color:var(--success);"></i>Free Shipping Over $75</li>
+                                <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;"><i class="fas fa-check me-2" style="color:var(--success);"></i>Secure Checkout</li>
+                                <li style="padding:6px 0;color:var(--text-secondary);font-size:0.9rem;"><i class="fas fa-check me-2" style="color:var(--success);"></i>24/7 Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="mt-5 pt-4" id="productReviews" style="display:none;">
+                <h4 class="fw-bold mb-4">Customer Reviews</h4>
+                <div id="reviewsList"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-5" style="background:var(--dark-surface);">
+        <div class="container">
+            <h4 class="fw-bold mb-4">Related Products</h4>
+            <div class="row g-4" id="relatedProducts"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container text-center">
+            <a href="../../index.html" class="brand-text text-decoration-none" style="font-size:1.8rem;">BODYPRO</a>
+            <p class="mt-3" style="color:var(--text-secondary);">Fuel Your Power. Build Your Legacy.</p>
+            <div class="d-flex justify-content-center gap-3 mt-3">
+                <a href="#"><i class="fab fa-facebook fa-lg" style="color:var(--text-secondary);"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-lg" style="color:var(--text-secondary);"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-lg" style="color:var(--text-secondary);"></i></a>
+            </div>
+            <hr style="border-color:var(--dark-border);margin:24px 0 16px;">
+            <p style="color:var(--text-muted);font-size:0.85rem;">&copy; 2026 BodyPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    'use strict';
+
+    let productsData = [];
+    let reviewsData = [];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      initTheme();
+      initNavbar();
+
+      const params = new URLSearchParams(window.location.search);
+      const productId = parseInt(params.get('id'));
+
+      if (!productId) {
+        window.location.href = '../../index.html';
+        return;
+      }
+
+      try {
+        const resp = await fetch('../../data/products.json');
+        if (!resp.ok) throw new Error('Failed to load');
+        const data = await resp.json();
+        productsData = data.products || [];
+        reviewsData = data.reviews || [];
+        renderProductDetail(productId);
+      } catch (e) {
+        console.error(e);
+        document.getElementById('productDetail').innerHTML = '<div class="col-12 text-center py-5"><h3>Product not found</h3><a href="../../index.html" class="btn btn-danger mt-3">Back to Shop</a></div>';
+      }
+
+      updateCartCount();
+    });
+
+    function renderProductDetail(id) {
+      const product = productsData.find(p => p.id === id);
+      if (!product) return;
+
+      document.title = `${product.name} - BodyPro`;
+
+      // Hide skeletons
+      document.getElementById('productImageSkeleton').style.display = 'none';
+      document.getElementById('detailSkeleton1').style.display = 'none';
+      document.getElementById('detailSkeleton2').style.display = 'none';
+      document.getElementById('detailSkeleton3').style.display = 'none';
+
+      // Breadcrumb
+      document.getElementById('breadcrumbCategory').textContent = product.category.charAt(0).toUpperCase() + product.category.slice(1);
+      document.getElementById('breadcrumbName').textContent = product.name;
+
+      // Image
+      const imgContainer = document.getElementById('productImageContainer');
+      imgContainer.style.display = 'block';
+      imgContainer.innerHTML = `
+        <div class="img-zoom-container" style="width:100%;aspect-ratio:1;background:var(--dark-surface);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1px solid var(--dark-border);">
+          <i class="${getCategoryIcon(product.category)}" style="font-size:6rem;color:var(--primary);opacity:0.3;"></i>
+          <span style="color:var(--text-muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;">${product.subcategory || product.category}</span>
+        </div>
+        ${product.images && product.images.length > 1 ? `
+          <div class="d-flex gap-2 mt-3">
+            ${product.images.map((img, i) => `
+              <div style="width:80px;height:80px;background:var(--dark-surface);border-radius:var(--radius-sm);border:2px solid ${i === 0 ? 'var(--primary)' : 'var(--dark-border)'};display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                <i class="${getCategoryIcon(product.category)}" style="font-size:1.2rem;color:var(--primary);opacity:0.4;"></i>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}`;
+
+      // Detail Info
+      const discount = product.originalPrice ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
+      const infoContainer = document.getElementById('productDetailInfo');
+      infoContainer.style.display = 'block';
+
+      let featuresHTML = '';
+      if (product.features) {
+        featuresHTML = `
+          <div class="mt-4" id="productFeatures" style="display:block;">
+            <h5 class="fw-bold mb-3">Features</h5>
+            <ul style="list-style:none;padding:0;">
+              ${product.features.map(f => `
+                <li style="padding:6px 0;color:var(--text-secondary);font-size:0.95rem;">
+                  <i class="fas fa-check-circle me-2" style="color:var(--success);"></i>${f}
+                </li>
+              `).join('')}
+            </ul>
+          </div>`;
+      }
+
+      let nutritionHTML = '';
+      if (product.nutrition) {
+        const nutritionItems = Object.entries(product.nutrition).filter(([key]) => key !== 'servingSize');
+        nutritionHTML = `
+          <div class="mt-4">
+            <h5 class="fw-bold mb-3">Nutrition Facts</h5>
+            <p style="color:var(--text-muted);font-size:0.8rem;">Per Serving: ${product.nutrition.servingSize}</p>
+            <div class="row g-2">
+              ${nutritionItems.map(([key, val]) => `
+                <div class="col-6 col-md-3">
+                  <div style="background:var(--dark-surface);padding:12px;border-radius:var(--radius-sm);text-align:center;">
+                    <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);">${val}</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);text-transform:capitalize;">${key}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>`;
+      }
+
+      let sizesHTML = '';
+      if (product.sizes) {
+        sizesHTML = `
+          <div class="mt-4">
+            <h5 class="fw-bold mb-2">Size</h5>
+            <div class="d-flex gap-2 flex-wrap">
+              ${product.sizes.map((s, i) => `
+                <span class="size-option" style="padding:8px 16px;border:1px solid var(--dark-border);border-radius:var(--radius-sm);cursor:pointer;font-size:0.85rem;transition:all 0.2s;" onclick="selectSize(this)">${s}</span>
+              `).join('')}
+            </div>
+          </div>`;
+      }
+
+      let colorsHTML = '';
+      if (product.colors) {
+        colorsHTML = `
+          <div class="mt-4">
+            <h5 class="fw-bold mb-2">Color</h5>
+            <div class="d-flex gap-2 flex-wrap">
+              ${product.colors.map(c => `
+                <span style="padding:6px 14px;border:1px solid var(--dark-border);border-radius:var(--radius-sm);cursor:pointer;font-size:0.8rem;transition:all 0.2s;" onclick="this.style.borderColor='var(--primary)';this.style.background='rgba(220,53,69,0.1)';">${c}</span>
+              `).join('')}
+            </div>
+          </div>`;
+      }
+
+      const stockPercent = Math.min((product.stockCount / 100) * 100, 100);
+      const stockClass = product.stockCount < 20 ? 'stock-low' : product.stockCount < 50 ? 'stock-medium' : 'stock-high';
+
+      infoContainer.innerHTML = `
+        ${product.badge ? `<span class="product-card-badge badge-${product.badgeColor || 'danger'}" style="position:static;display:inline-block;margin-bottom:12px;">${product.badge}</span>` : ''}
+        <span class="product-card-category">${product.category.toUpperCase()}</span>
+        <h2 class="fw-bold mt-2 mb-2">${product.name}</h2>
+        <div class="product-card-rating mb-3">
+          <span class="stars" style="font-size:1rem;">${generateStars(product.rating)}</span>
+          <span class="rating-count">(${product.reviewCount} reviews)</span>
+        </div>
+        <div class="product-card-price mb-3" style="border:none;padding:0;">
+          <span class="price-current" style="font-size:2rem;">$${product.price.toFixed(2)}</span>
+          ${product.originalPrice ? `<span class="price-original" style="font-size:1.1rem;">$${product.originalPrice.toFixed(2)}</span>` : ''}
+          ${discount > 0 ? `<span class="price-discount" style="font-size:0.85rem;">Save ${discount}%</span>` : ''}
+        </div>
+        <p style="color:var(--text-secondary);line-height:1.8;font-size:0.95rem;">${product.description}</p>
+        ${product.inStock ? `
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="fas fa-check-circle" style="color:var(--success);"></i>
+            <span style="color:var(--success);font-weight:600;font-size:0.9rem;">In Stock (${product.stockCount} available)</span>
+          </div>
+          <div class="stock-bar" style="width:200px;">
+            <div class="stock-bar-fill ${stockClass}" style="width:${stockPercent}%;"></div>
+          </div>
+        ` : `
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="fas fa-times-circle" style="color:var(--primary);"></i>
+            <span style="color:var(--primary);font-weight:600;">Out of Stock</span>
+          </div>
+        `}
+        ${sizesHTML}
+        ${colorsHTML}
+        <div class="d-flex gap-3 mt-4">
+          <div class="qty-selector">
+            <button onclick="changeQty(-1)"><i class="fas fa-minus"></i></button>
+            <input type="number" id="productQty" value="1" min="1" max="99" readonly>
+            <button onclick="changeQty(1)"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="d-flex gap-3 mt-4">
+          <button class="btn btn-danger btn-lg flex-grow-1 py-3 fw-bold ripple" onclick="addDetailToCart(${product.id})" ${!product.inStock ? 'disabled' : ''}>
+            <i class="fas fa-shopping-cart me-2"></i>${product.inStock ? 'Add to Cart' : 'Out of Stock'}
+          </button>
+          <button class="btn btn-outline-light btn-lg px-4" onclick="toggleWishlistDetail(${product.id})">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+        ${featuresHTML}
+        ${nutritionHTML}
+      `;
+
+      // Product Features section
+      document.getElementById('productFeatures').style.display = 'block';
+
+      // Reviews
+      renderProductReviews(id);
+
+      // Related Products
+      renderRelatedProducts(product);
+    }
+
+    function renderProductReviews(productId) {
+      const reviews = reviewsData.filter(r => r.productId === productId);
+      const container = document.getElementById('reviewsList');
+      const section = document.getElementById('productReviews');
+      section.style.display = 'block';
+
+      if (reviews.length === 0) {
+        container.innerHTML = '<p class="text-muted py-3">No reviews yet for this product. Be the first to review!</p>';
+        return;
+      }
+
+      container.innerHTML = reviews.map(r => `
+        <div class="review-item">
+          <div class="review-header">
+            <span class="review-author">${r.author}</span>
+            <span class="review-date">${r.date}</span>
+          </div>
+          <div class="stars mb-2">${generateStars(r.rating)}</div>
+          <div class="review-title">${r.title}</div>
+          <div class="review-comment">${r.comment}</div>
+          ${r.verified ? '<span class="review-verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>' : ''}
+        </div>
+      `).join('');
+    }
+
+    function renderRelatedProducts(product) {
+      const related = productsData
+        .filter(p => p.category === product.category && p.id !== product.id)
+        .slice(0, 4);
+
+      const container = document.getElementById('relatedProducts');
+      if (related.length === 0) {
+        container.innerHTML = '<div class="col-12 text-center text-muted">No related products found.</div>';
+        return;
+      }
+
+      container.innerHTML = related.map(p => {
+        const discount = p.originalPrice ? Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100) : 0;
+        return `
+          <div class="col-sm-6 col-lg-3">
+            <div class="product-card" style="cursor:pointer;" onclick="window.location.href='product-detail.html?id=${p.id}'">
+              <div class="product-card-image">
+                <div style="width:100%;height:100%;background:var(--dark-surface);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+                  <i class="${getCategoryIcon(p.category)}" style="font-size:2.5rem;color:var(--primary);opacity:0.4;"></i>
+                  <span style="font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;">${p.subcategory || p.category}</span>
+                </div>
+                ${p.badge ? `<span class="product-card-badge badge-${p.badgeColor || 'danger'}">${p.badge}</span>` : ''}
+              </div>
+              <div class="product-card-body">
+                <h6 class="product-card-title" style="font-size:0.85rem;">${p.name}</h6>
+                <div class="product-card-price" style="border:none;padding:0;margin-top:auto;">
+                  <span class="price-current" style="font-size:1.1rem;">$${p.price.toFixed(2)}</span>
+                  ${p.originalPrice ? `<span class="price-original" style="font-size:0.8rem;">$${p.originalPrice.toFixed(2)}</span>` : ''}
+                </div>
+              </div>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    function getCategoryIcon(category) {
+      const icons = {
+        sportswear: 'fas fa-tshirt',
+        supplements: 'fas fa-flask',
+        vitamins: 'fas fa-pills',
+        thermoses: 'fas fa-wine-bottle',
+        equipment: 'fas fa-dumbbell'
+      };
+      return icons[category] || 'fas fa-box';
+    }
+
+    function generateStars(rating) {
+      let stars = '';
+      const full = Math.floor(rating);
+      const half = rating % 1 >= 0.5;
+      for (let i = 0; i < full; i++) stars += '<i class="fas fa-star"></i>';
+      if (half) stars += '<i class="fas fa-star-half-alt"></i>';
+      for (let i = full + (half ? 1 : 0); i < 5; i++) stars += '<i class="far fa-star"></i>';
+      return stars;
+    }
+
+    function changeQty(delta) {
+      const input = document.getElementById('productQty');
+      let val = parseInt(input.value) + delta;
+      if (val < 1) val = 1;
+      if (val > 99) val = 99;
+      input.value = val;
+    }
+
+    function selectSize(el) {
+      el.parentElement.querySelectorAll('span').forEach(s => {
+        s.style.borderColor = 'var(--dark-border)';
+        s.style.background = 'transparent';
+      });
+      el.style.borderColor = 'var(--primary)';
+      el.style.background = 'rgba(220,53,69,0.1)';
+    }
+
+    window.addDetailToCart = function(productId) {
+      const product = productsData.find(p => p.id === productId);
+      if (!product) return;
+
+      const qty = parseInt(document.getElementById('productQty').value) || 1;
+      let cart = JSON.parse(localStorage.getItem('bodypro_cart')) || [];
+      const existing = cart.find(item => item.id === productId);
+
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          qty: qty
+        });
+      }
+
+      localStorage.setItem('bodypro_cart', JSON.stringify(cart));
+      updateCartCount();
+      showToast(`${product.name} added to cart!`, 'success');
+    };
+
+    window.toggleWishlistDetail = function(productId) {
+      let wishlist = JSON.parse(localStorage.getItem('bodypro_wishlist')) || [];
+      const idx = wishlist.indexOf(productId);
+      if (idx > -1) {
+        wishlist.splice(idx, 1);
+        showToast('Removed from wishlist', 'info');
+      } else {
+        wishlist.push(productId);
+        showToast('Added to wishlist!', 'success');
+      }
+      localStorage.setItem('bodypro_wishlist', JSON.stringify(wishlist));
+    };
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('bodypro_cart')) || [];
+      const total = cart.reduce((sum, item) => sum + item.qty, 0);
+      const badge = document.getElementById('cartCount');
+      if (badge) badge.textContent = total;
+    }
+
+    function showToast(message, type) {
+      const container = document.getElementById('toastContainer');
+      const icons = { success: 'fas fa-check-circle', error: 'fas fa-exclamation-circle', info: 'fas fa-info-circle' };
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      toast.innerHTML = `<i class="${icons[type] || icons.info}"></i> ${message}`;
+      container.appendChild(toast);
+      setTimeout(() => { toast.classList.add('removing'); setTimeout(() => toast.remove(), 300); }, 3000);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem('bodypro_theme') || 'dark';
+      const toggle = document.getElementById('themeToggle');
+      const icon = toggle?.querySelector('i');
+      if (saved === 'light') {
+        document.body.classList.add('light-mode');
+        if (icon) icon.className = 'fas fa-sun';
+      }
+      toggle?.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        if (icon) icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+        localStorage.setItem('bodypro_theme', isLight ? 'light' : 'dark');
+      });
+    }
+
+    function initNavbar() {
+      const navbar = document.getElementById('mainNavbar');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 50) navbar?.classList.add('scrolled');
+        else navbar?.classList.remove('scrolled');
+      });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+/* ============================================
+   BodyPro - Shop Page Styles
+   ============================================ */
+
+/* Shop Hero */
+.shop-hero {
+  padding: 140px 0 60px;
+  background: linear-gradient(135deg, rgba(10,10,10,0.98), rgba(20,20,20,0.95)),
+              radial-gradient(ellipse at 30% 50%, rgba(220,53,69,0.08) 0%, transparent 60%);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.shop-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+/* Category Tabs */
+.shop-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.shop-tab {
+  padding: 12px 28px;
+  border: 2px solid var(--dark-border);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.light-mode .shop-tab {
+  border-color: #ddd;
+}
+
+.shop-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.shop-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 20px rgba(220,53,69,0.3);
+}
+
+.shop-tab i {
+  font-size: 1.1rem;
+}
+
+/* Category Section */
+.shop-category-section {
+  padding: 60px 0 40px;
+}
+
+.shop-category-section:first-child {
+  padding-top: 40px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--dark-border);
+}
+
+.category-header-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.category-header-info h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.category-header-info p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.category-header-count {
+  margin-left: auto;
+  background: var(--dark-surface);
+  color: var(--text-secondary);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.light-mode .category-header-count {
+  background: #f0f0f0;
+}
+
+/* Product Grid - Full width row, 4 columns on desktop, 2 on mobile */
+.shop-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+@media (max-width: 1199.98px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .shop-tabs {
+    gap: 8px;
+  }
+  
+  .shop-tab {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .shop-hero {
+    padding: 120px 0 40px;
+  }
+  
+  .shop-tab {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .category-header {
+    flex-wrap: wrap;
+  }
+  
+  .category-header-count {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+
+/* Enhanced Product Card for Shop */
+.shop-product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.light-mode .shop-product-card {
+  border-color: #e8e8e8;
+  box-shadow: var(--shadow-sm);
+}
+
+.shop-product-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(220,53,69,0.3);
+  box-shadow: var(--shadow-glow);
+}
+
+.shop-product-card .product-card-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--dark-surface);
+}
+
+.light-mode .shop-product-card .product-card-image {
+  background: #f5f5f5;
+}
+
+.shop-product-card .product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.shop-product-card:hover .product-card-image img {
+  transform: scale(1.08);
+}
+
+.shop-product-card .product-card-body {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Quick View Button on Hover */
+.shop-quick-view {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: 3;
+  border-radius: var(--radius-md);
+}
+
+.shop-product-card:hover .shop-quick-view {
+  opacity: 1;
+}
+
+.shop-quick-view-btn {
+  padding: 12px 28px;
+  background: white;
+  color: #111;
+  border: none;
+  border-radius: var(--radius-xl);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transform: translateY(10px);
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shop-product-card:hover .shop-quick-view-btn {
+  transform: translateY(0);
+}
+
+.shop-quick-view-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* No Products Message for Shop */
+.shop-no-products {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+  grid-column: 1 / -1;
+}
+
+.shop-no-products i {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  opacity: 0.3;
+}
+
+.shop-no-products h3 {
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.shop-no-products p {
+  max-width: 400px;
+  margin: 0 auto;
+}

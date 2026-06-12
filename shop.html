@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="BodyPro Shop - Browse all our premium supplements, sportswear, vitamins, and gym equipment.">
+    <title>Shop - BodyPro | Fuel Your Power. Build Your Legacy.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="code/css/style.css">
+    <link rel="stylesheet" href="code/css/enhancements.css">
+    <link rel="stylesheet" href="code/css/shop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Ticker Banner -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span>Free Shipping on Orders Over $75</span>
+            <span><i class="fas fa-fire"></i> Summer Sale - Up to 50% Off</span>
+            <span>New Arrivals Weekly</span>
+            <span>Premium Quality Guaranteed</span>
+            <span>24/7 Customer Support</span>
+            <span>Free Shipping on Orders Over $75</span>
+            <span><i class="fas fa-fire"></i> Summer Sale - Up to 50% Off</span>
+            <span>New Arrivals Weekly</span>
+            <span>Premium Quality Guaranteed</span>
+            <span>24/7 Customer Support</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">BODYPRO</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="nav-btn" id="cartBtn" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cartCount">0</span>
+                    </button>
+                    <button class="nav-btn" id="wishlistBtn" data-bs-toggle="modal" data-bs-target="#likesModal"
+                        aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge" id="likesCount">0</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Shop All Products</h1>
+            <p class="lead mb-4" style="color:var(--text-secondary);max-width:600px;margin:0 auto;">Browse our complete
+                collection of premium fitness products organized by category.</p>
+
+            <!-- Category Tabs -->
+            <div class="shop-tabs" id="shopTabs">
+                <button class="shop-tab active" data-category="supplements" onclick="filterShopCategory('supplements')">
+                    <i class="fas fa-flask me-2"></i>Supplements
+                </button>
+                <button class="shop-tab" data-category="sportswear" onclick="filterShopCategory('sportswear')">
+                    <i class="fas fa-tshirt me-2"></i>Sportswear
+                </button>
+                <button class="shop-tab" data-category="vitamins" onclick="filterShopCategory('vitamins')">
+                    <i class="fas fa-pills me-2"></i>Vitamins & Health
+                </button>
+                <button class="shop-tab" data-category="equipment" onclick="filterShopCategory('equipment')">
+                    <i class="fas fa-dumbbell me-2"></i>Equipment
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Sort Bar -->
+    <section class="py-3" style="background:var(--dark-surface);border-bottom:1px solid var(--dark-border);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 mb-3 mb-md-0">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search products...">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="results-count" id="resultsCount"></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="sort-dropdown-container justify-content-md-end">
+                        <label><i class="fas fa-sort me-2"></i>Sort:</label>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="default">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="name">Name: A-Z</option>
+                            <option value="discount">Biggest Discount</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5" id="shopProducts">
+        <div class="container">
+            <!-- Active Filters -->
+            <div class="active-filters" id="activeFilters"></div>
+
+            <div class="row g-4" id="productsContainer">
+                <!-- Products rendered by JS -->
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-4" id="loadMoreWrap" style="display:none;">
+                <button class="btn btn-outline-danger btn-lg px-5" id="loadMoreBtn">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5" style="background:var(--dark-surface);">
+        <div class="container text-center reveal">
+            <h3 class="fw-bold mb-3">Stay in the Loop</h3>
+            <p class="mb-4" style="color:var(--text-secondary);max-width:500px;margin:0 auto;">Subscribe to get
+                exclusive deals, new arrivals, and fitness tips straight to your inbox.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email address"
+                            style="border-radius:var(--radius-sm) 0 0 var(--radius-sm);">
+                        <button class="btn btn-danger px-4"
+                            style="border-radius:0 var(--radius-sm) var(--radius-sm) 0;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5" id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">BODYPRO</h5>
+                    <p>Your premium destination for fitness products, supplements, sportswear, and gym equipment. Fuel
+                        your power. Build your legacy.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#supplements">Supplements</a></li>
+                        <li><a href="#sportswear">Sportswear</a></li>
+                        <li><a href="#vitamins">Vitamins</a></li>
+                        <li><a href="#equipment">Equipment</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#guide">Buying Guide</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Size Chart</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>456 Iron Avenue, NY 10001</li>
+                        <li><i class="fas fa-phone me-2"></i>(555) 789-0123</li>
+                        <li><i class="fas fa-envelope me-2"></i>support@bodypro.com</li>
+                        <li><i class="fas fa-clock me-2"></i>Mon - Sat: 9AM - 8PM</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2026 BodyPro. All rights reserved. | Built for Champions.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5 class="mb-0 fw-bold"><i class="fas fa-shopping-cart me-2"></i>Your Cart</h5>
+            <button class="btn-close btn-close-white" id="closeCart"></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <div class="no-products">
+                <i class="fas fa-shopping-cart"></i>
+                <h4>Your cart is empty</h4>
+                <p>Add some products to get started!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+                <span class="fw-bold">Total:</span>
+                <span id="cartTotal" class="fw-bold">$0.00</span>
+            </div>
+            <button class="btn btn-danger w-100 py-3 fw-bold ripple" id="checkoutBtn">
+                <i class="fas fa-lock me-2"></i>Checkout
+            </button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Wishlist Modal -->
+    <div class="modal fade" id="likesModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-heart me-2" style="color:var(--primary);"></i>Your
+                        Favorites</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="likesItems">
+                    <p class="text-center text-muted py-4">No favorites yet. Start browsing!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Modal -->
+    <div class="modal fade" id="reviewsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-star me-2" style="color:var(--accent);"></i>Product
+                        Reviews</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="reviewsModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="quickViewTitle">Quick View</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="quickViewBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cart Notification -->
+    <div class="cart-notification" id="cartNotification">
+        <i class="fas fa-check-circle"></i>
+        <span id="cartNotificationText">Added to cart!</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="code/javaScript/shop.js"></script>
+</body>
+
+</html>
